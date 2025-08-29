@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Download, Calendar, GraduationCap, Briefcase } from "lucide-react"
 import { useEffect, useState } from "react"
+import Link from "next/link"
 
 export default function ResumePage() {
   const [typedText, setTypedText] = useState("")
@@ -34,14 +35,27 @@ export default function ResumePage() {
             Download my complete resume to learn more about my experience and qualifications.
           </p>
 
-          <Button
+          {/* <Button
             size="lg"
             className="group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 animate-bounce-slow"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <Download className="mr-2 h-5 w-5 group-hover:animate-bounce" />
             <span className="relative z-10">Download Resume</span>
-          </Button>
+          </Button> */}
+
+          <Button
+                variant="outline"
+                size="lg"
+                className="group relative overflow-hidden bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/25 animate-bounce-slow"
+                asChild
+              >
+                <Link href="/Hammad_CV_J.pdf" download>
+                  <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  Download Resume
+                </Link>
+              </Button>
+        
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
